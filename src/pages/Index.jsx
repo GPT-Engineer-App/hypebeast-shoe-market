@@ -1,7 +1,6 @@
 import { Box, Container, Flex, IconButton, Input, InputGroup, InputRightElement, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import { FaHeart, FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "@chakra-ui/react";
 
 const Index = () => {
   const products = [
@@ -25,15 +24,13 @@ const Index = () => {
           <IconButton aria-label="Shopping Cart" icon={<FaShoppingCart />} m={2} />
         </Flex>
       </Flex>
-      <Carousel showArrows={true} autoPlay={true} infiniteLoop={true}>
-        <div>
-          <img src="https://via.placeholder.com/600x300?text=Featured+Shoe+1" alt="Featured Shoe 1" />
-          <p className="legend">Featured Shoe 1</p>
-        </div>
-        <div>
-          <img src="https://via.placeholder.com/600x300?text=Featured+Shoe+2" alt="Featured Shoe 2" />
-          <p className="legend">Featured Shoe 2</p>
-        </div>
+      <Carousel>
+        <Flex bg="gray.200" align="center" justify="center" h="300px">
+          <Text fontSize="2xl">Featured Shoe 1</Text>
+        </Flex>
+        <Flex bg="gray.300" align="center" justify="center" h="300px">
+          <Text fontSize="2xl">Featured Shoe 2</Text>
+        </Flex>
       </Carousel>
       <Box p={4}>
         <Text fontSize="xl" mb={2}>Recommended Products</Text>
